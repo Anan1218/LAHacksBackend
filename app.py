@@ -1,14 +1,35 @@
+from re import X
 from typing import Text
 from flask import Flask
+from flask import request
+import urllib.parse
+
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
-  temp = faceAnalyze()
-  text = sentimentAnalyze("I am sad") # change in future
-  if (temp == "sad" | temp == "angry") & text == 1:
-    return 1
-  return 0
+  image = request.args.get('image')
+  user = request.args.get('user')
+  # print("====================")
+  # print(imageURL)
+  textInput = request.args.get('text')
+
+  # imageURL = "\"" + "https://" + image + "\""
+  x = image.split("/"+user+"/")
+
+  temp = "https://" + x[0] + "%2F" + user+ "%2F" +x[1]
+  imageURL = urllib.parse.quote(temp, safe="%/:=&?~#+!$,;'@()*[]")
+  # print(imageURL)
+  # print("====================")
+  emotion = faceAnalyze(imageURL)
+  # print(emotion)
+  text = sentimentAnalyze(textInput) # change in future
+  # print(text)
+  if (((emotion == "sad") | (emotion == "angry")) & (text == 1)):
+    # print(1)
+    return "1"
+  # print(0)
+  return "0"
 
 
 import numpy as np
@@ -51,8 +72,9 @@ def load_model():
       np.testing.assert_almost_equal(ref_o, o)
 
 from deepface import DeepFace
-def faceAnalyze():
-  obj = DeepFace.analyze(img_path = "./tony.jpeg", actions = ['emotion'])
+def faceAnalyze(imageURL):
+  print(imageURL)
+  obj = DeepFace.analyze(img_path = imageURL, actions = ['emotion'])
   return obj.get("dominant_emotion")
 
 
