@@ -1,5 +1,3 @@
-from re import X
-from typing import Text
 from flask import Flask
 from flask import request
 import urllib.parse
