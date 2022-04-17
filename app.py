@@ -32,10 +32,10 @@ def hello():
   return "0"
 
 
-import numpy as np
-import onnx
-import os
-import glob
+# import numpy as np
+# import onnx
+# import os
+# import glob
 # import onnx as backend
 
 # from onnx import numpy_helper
