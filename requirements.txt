@@ -1,6 +1,4 @@
 absl-py==1.0.0
-aioflask==0.4.0
-asgiref==3.5.0
 astunparse==1.6.3
 beautifulsoup4==4.11.1
 cachetools==5.0.0
@@ -16,10 +14,7 @@ gdown==4.4.0
 google-auth==2.6.5
 google-auth-oauthlib==0.4.6
 google-pasta==0.2.0
-greenlet==1.1.2
-greenletio==0.9.0
 grpcio==1.44.0
-h11==0.13.0
 h5py==3.6.0
 idna==3.3
 importlib-metadata==4.11.3
@@ -32,6 +27,7 @@ libclang==13.0.0
 Markdown==3.3.6
 MarkupSafe==2.1.1
 mtcnn==0.1.1
+nltk==3.7
 numpy==1.22.3
 oauthlib==3.2.0
 opencv-python==4.5.5.64
@@ -62,7 +58,6 @@ tf-estimator-nightly==2.8.0.dev2021122109
 tqdm==4.64.0
 typing-extensions==4.1.1
 urllib3==1.26.9
-uvicorn==0.17.6
 Werkzeug==2.1.1
 wrapt==1.14.0
 zipp==3.8.0
