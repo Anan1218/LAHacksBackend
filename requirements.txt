@@ -36,7 +36,6 @@ nltk==3.7
 numpy==1.22.3
 oauthlib==3.2.0
 onnx==1.11.0
-onnxruntime==1.11.0
 opencv-python==4.5.5.64
 opt-einsum==3.3.0
 pandas==1.4.2
